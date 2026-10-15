@@ -1,0 +1,347 @@
+/* ==========================================================
+   GitВГТУ — общие стили сайта (тёмная тема)
+   ========================================================== */
+
+:root {
+    /* Палитра подобрана под фон логотипа. Если вокруг картинки
+       видна рамка, поправь --bg под цвет фона твоего изображения. */
+    --bg:        #253047;
+    --bg-raised: #2d3a54;
+    --text:      #f3f6fb;
+    --muted:     #a9b4c9;
+    --line:      rgba(255, 255, 255, 0.14);
+    --focus:     #9db8ff;
+    --error:     #ff7a7a;
+
+    --font: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --radius: 10px;
+    --page-width: 1120px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Видимый фокус для навигации с клавиатуры */
+a:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+}
+
+/* ---------- Шапка ---------- */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+}
+
+.brand {
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ---------- Кнопки ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.15rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    font: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-lg {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.05rem;
+}
+
+/* Основная: белая, как логотип */
+.btn-solid {
+    background: var(--text);
+    color: var(--bg);
+}
+
+.btn-solid:hover {
+    background: #ffffff;
+}
+
+/* Второстепенная: только контур */
+.btn-ghost {
+    border-color: var(--line);
+    color: var(--text);
+}
+
+.btn-ghost:hover {
+    background: var(--bg-raised);
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* ---------- Главный блок ---------- */
+
+.hero {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.hero-text h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 4.2vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+}
+
+.lead {
+    max-width: 46ch;
+    margin: 0 0 2rem;
+    color: var(--muted);
+    font-size: 1.125rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+/* Логотип. Края картинки плавно растворяются в фоне,
+   поэтому рамки не видно, даже если цвета чуть отличаются. */
+.hero-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 55%, transparent 78%);
+            mask-image: radial-gradient(ellipse at center, #000 55%, transparent 78%);
+    animation: logo-in 0.9s ease-out both;
+}
+
+@keyframes logo-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Три возможности ---------- */
+
+.facts {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+}
+
+.facts > div {
+    padding-left: 1rem;
+    border-left: 2px solid var(--line);
+}
+
+.facts dt {
+    font-weight: 700;
+}
+
+.facts dd {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* ---------- Подвал ---------- */
+
+.footer {
+    width: 100%;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ---------- Мобильные экраны ---------- */
+
+@media (max-width: 820px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Логотип показываем сверху, но поменьше */
+    .hero-logo {
+        order: -1;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+/* Уважаем настройку «уменьшить анимацию» */
+@media (prefers-reduced-motion: reduce) {
+    .hero-logo {
+        animation: none;
+    }
+
+    .btn {
+        transition: none;
+    }
+}
+
+/* ==========================================================
+   Страницы входа и регистрации
+   ========================================================== */
+
+.auth {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.auth-panel {
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+}
+
+.auth-panel h1 {
+    margin: 0 0 0.35rem;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.auth-lead {
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+}
+
+.field {
+    margin-bottom: 1.1rem;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.field input {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--text);
+    font: inherit;
+    transition: border-color 0.15s ease;
+}
+
+.field input:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+.field input:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 1px;
+    border-color: var(--focus);
+}
+
+/* Красная рамка только после того, как пользователь начал вводить */
+.field input:user-invalid {
+    border-color: var(--error);
+}
+
+.hint {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.form-error {
+    margin: 0 0 1.25rem;
+    padding: 0.75rem 0.9rem;
+    background: rgba(255, 122, 122, 0.12);
+    border: 1px solid var(--error);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+}
+
+.form-error[hidden] {
+    display: none;
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.auth-switch {
+    margin: 1.5rem 0 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.auth-switch a {
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "ContainingType": "Git\u0412\u0413\u0422\u0423.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__4_1",
+    "RelativePath": "api/profile",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Git\u0412\u0413\u0422\u0423.Program\u002B\u003C\u003Ec__DisplayClass4_0",
+    "Method": "\u003CMain\u003Eb__4",
+    "RelativePath": "auth/login/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Git\u0412\u0413\u0422\u0423.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__4_6",
+    "RelativePath": "auth/register/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Git\u0412\u0413\u0422\u0423.Program",
+    "Method": "SendCss",
+    "RelativePath": "css/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

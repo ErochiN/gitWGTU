@@ -1,0 +1,15 @@
+wwwroot\auth\login.html
+wwwroot\auth\register.html
+wwwroot\css\site.css
+wwwroot\img\logo.png
+wwwroot\index.html
+wwwroot\js\auth.js
+wwwroot\js\profile.js
+wwwroot\app\profile.html
+C:\Users\se635\source\repos\GitВГТУ\GitВГТУ\wwwroot\auth\login.html
+C:\Users\se635\source\repos\GitВГТУ\GitВГТУ\wwwroot\auth\register.html
+C:\Users\se635\source\repos\GitВГТУ\GitВГТУ\wwwroot\css\site.css
+C:\Users\se635\source\repos\GitВГТУ\GitВГТУ\wwwroot\index.html
+C:\Users\se635\source\repos\GitВГТУ\GitВГТУ\wwwroot\js\auth.js
+C:\Users\se635\source\repos\GitВГТУ\GitВГТУ\wwwroot\js\profile.js
+C:\Users\se635\source\repos\GitВГТУ\GitВГТУ\wwwroot\app\profile.html

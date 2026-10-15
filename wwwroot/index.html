@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GitВГТУ — ваши репозитории в браузере</title>
+    <meta name="description" content="Просмотр репозиториев с вашего сервера: ветки, коммиты и файлы.">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Шрифт Manrope (есть кириллица). Если сервер без интернета, сработает системный шрифт из site.css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap">
+
+    <!-- Общие стили сайта. Путь от корня, чтобы работал и на вложенных адресах (/auth/login) -->
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a class="brand" href="/">GitВГТУ</a>
+
+        <nav class="nav" aria-label="Основная навигация">
+            <a class="btn btn-ghost" href="/auth/login">Войти</a>
+            <a class="btn btn-solid" href="/auth/register">Регистрация</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <h1>Репозитории с вашего сервера — в браузере</h1>
+            <p class="lead">
+                Смотрите ветки, историю коммитов и файлы без командной строки.
+                Войдите, чтобы открыть свои проекты.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-solid btn-lg" href="/auth/register">Регистрация</a>
+                <a class="btn btn-ghost btn-lg" href="/auth/login">Войти</a>
+            </div>
+
+            <dl class="facts">
+                <div>
+                    <dt>Ветки и теги</dt>
+                    <dd>Переключайтесь между версиями проекта.</dd>
+                </div>
+                <div>
+                    <dt>История коммитов</dt>
+                    <dd>Кто, когда и что изменил.</dd>
+                </div>
+                <div>
+                    <dt>Просмотр файлов</dt>
+                    <dd>Читайте код прямо на странице.</dd>
+                </div>
+            </dl>
+        </div>
+
+        <!--
+            ↓↓↓ ПУТЬ К КАРТИНКЕ МЕНЯТЬ ЗДЕСЬ (атрибут src) ↓↓↓
+            Сейчас ждёт файл wwwroot/img/logo.png
+            Положи туда свой логотип или поменяй путь, например: /img/vgtu.png
+        -->
+        <img class="hero-logo"
+             src="/img/logo.png"
+             alt="Логотип ВГТУ"
+             width="1200" height="630">
+    </main>
+
+    <footer class="footer">
+        <p>GitВГТУ</p>
+    </footer>
+
+</body>
+</html>
